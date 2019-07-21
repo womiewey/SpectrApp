@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{dish}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-searchbar [(ngModel)]="myInput" [showCancelButton]="shouldShowCancel" placeholder="Enter budget">
+  </ion-searchbar>
+  <ion-item *ngFor = "let x of ingredient; let i = index" >
+    <p> {{x}} </p>
+    <p> {{price[i]}}</p>
+  </ion-item>
+  <ion-item placeholder="Add item">
+    <ion-select [(ngModel)]="toppings"  placeholder="Add item">
+      <ion-option>Potato</ion-option>
+      <ion-option>Black Olives</ion-option>
+      <ion-option>Extra Cheese</ion-option>
+      <ion-option>Mushrooms</ion-option>
+      <ion-option>Pepperoni</ion-option>
+      <ion-option>Sausage</ion-option>
+    </ion-select>
+    <button ion-button item-right> Add </button>
+  </ion-item>
+
+  <ion-item item-right> Price = 300 </ion-item>
+</ion-content>
